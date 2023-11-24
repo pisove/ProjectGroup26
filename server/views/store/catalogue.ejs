@@ -1,0 +1,52 @@
+<%- include ('../partials/header.ejs') %>
+<%- include ('../partials/main_nav.ejs') %>
+<!-- Main Content -->
+<main class="container">
+    <div class="row">
+    <div class="col-md-offset-3 col-md-10">
+    <h1><%= title %></h1>
+    <a href="/store-catalogue/add" class="btn btn-primary" role="button">
+        <i class="fas fa-plus-circle"></i> Add an Item </a>
+        <br>
+    <br>
+    <table class = "table table-bordered table-hover">
+    <thead class="thead-dark">
+    <tr class="d-flex">
+    <th class ="text-centre col-2">name</th>
+    <th class ="text-centre col-2">catagory</th>
+    <th class ="text-centre col-4">description</th>
+    <th class ="text-centre col-1">stockpile</th>
+    <th class ="text-centre col-1">price</th>
+    <th class ="text-centre col-1"></th>
+    <th class ="text-centre col-1"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% for(let count= 0; count<StoreCatalogue.length; count ++) {%>
+        <tr class="d-flex">
+        <td class="text-centre col-2"><%= StoreCatalogue[count].name %></td>
+        <td class="text-centre col-2"><%= StoreCatalogue[count].catagory %></td>
+        <td class="text-centre col-4"><%= StoreCatalogue[count].description %></td>
+        <td class="text-centre col-1"><%= StoreCatalogue[count].stock %></td>
+        <td class="text-centre col-1"><%= StoreCatalogue[count].price %></td>
+        <td class="text-centre col-1">
+            <a href="/store-catalogue/edit/<%= StoreCatalogue[count]._id %>"
+            class="btn btn-primary">
+            <i class="fas fa-pencil"></i> </a>
+            </td>
+        <td class="text-centre col-1">
+            <a href="/store-catalogue/delete/<%= StoreCatalogue[count]._id %>"
+            class="btn btn-danger">
+            <i class="fas fa-xmark"></i> </a>
+            </td>
+       
+        </tr>
+
+    <%} %>
+    <tbody>
+    </table>
+    </div>
+</div>
+</main>
+<%- include ('../partials/bottom_nav.ejs') %>
+<%- include ('../partials/footer.ejs')%> 

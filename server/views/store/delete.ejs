@@ -1,0 +1,20 @@
+<%- include ('../partials/header.ejs') %>
+<%- include ('../partials/main_nav.ejs') %>
+
+<!-- Content for delete page-->
+<div class="container">
+    <div class="row">
+    <h1>Confirm to Delete <em><%= item.name%></em>?</h1>
+    
+    <form method="post">
+    <button class="btn btn-danger" type="submit">
+    <i class="fas fa-edit"></i> Confirm</button>
+
+    <a href="/store-catalogue" class="btn btn-warning">
+    <i class="fas fa-undo"></i> Cancel</a>
+    </form>
+    </div>
+</div>
+    
+<%- include ('../partials/bottom_nav.ejs') %>
+<%- include ('../partials/footer.ejs')%>

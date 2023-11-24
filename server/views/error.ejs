@@ -1,0 +1,9 @@
+<%- include ('../views/partials/header.ejs') %>
+<%- include ('../views/partials/main_nav.ejs') %>
+<div class = "container">
+    <h1><%= message %></h1>
+    <h2><%= error.status %></h2>
+    <pre><%= error.stack %></pre>
+</div>
+<%- include ('../views/partials/bottom_nav.ejs') %>
+<%- include ('../views/partials/footer.ejs') %>
