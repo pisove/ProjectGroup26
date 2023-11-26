@@ -5,7 +5,7 @@
     <div class="row">
     <div class="col-md-offset-3 col-md-10">
     <h1>Incident Management</h1>
-    <a href="/store-catalogue/add" class="btn btn-primary" role="button">
+    <a href="/incident-catalogue/add" class="btn btn-primary" role="button">
         <i class="fas fa-plus-circle"></i> Add an Incident </a>
         <br>
     <br>
@@ -22,20 +22,20 @@
     </tr>
     </thead>
     <tbody>
-    <% for(let count= 0; count<StoreCatalogue.length; count ++) {%>
+    <% for(let count= 0; count<IncidentCatalogue.length; count ++) {%>
         <tr class="d-flex">
-        <td class="text-centre col-2"><%= StoreCatalogue[count].name %></td>
-        <td class="text-centre col-2"><%= StoreCatalogue[count].catagory %></td>
-        <td class="text-centre col-4"><%= StoreCatalogue[count].description %></td>
-        <td class="text-centre col-1"><%= StoreCatalogue[count].stock %></td>
-        <td class="text-centre col-1"><%= StoreCatalogue[count].price %></td>
+        <td class="text-centre col-2"><%= IncidentCatalogue[count].name %></td>
+        <td class="text-centre col-2"><%= IncidentCatalogue[count].catagory %></td>
+        <td class="text-centre col-4"><%= IncidentCatalogue[count].description %></td>
+        <td class="text-centre col-1"><%= IncidentCatalogue[count].stock %></td>
+        <td class="text-centre col-1"><%= IncidentCatalogue[count].price %></td>
         <td class="text-centre col-1">
-            <a href="/store-catalogue/edit/<%= StoreCatalogue[count]._id %>"
+            <a href="/incident-catalogue/edit/<%= IncidentCatalogue[count]._id %>"
             class="btn btn-primary">
             <i class="fas fa-pencil"></i> </a>
             </td>
         <td class="text-centre col-1">
-            <a href="/store-catalogue/delete/<%= StoreCatalogue[count]._id %>"
+            <a href="/incident-catalogue/delete/<%= IncidentCatalogue[count]._id %>"
             class="btn btn-danger">
             <i class="fas fa-xmark"></i> </a>
             </td>
