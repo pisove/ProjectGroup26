@@ -2,11 +2,11 @@ let mongoose = require('mongoose');
 //create store model
 let storeModel = mongoose.Schema
 ({
-    name: String,
-    catagory: String,
+    issue: String,
+    status: String,
     description: String,
-    stock: Number,
-    price: Number,
+    date: Number,
+    time: Number,
 },
 {
     collection: "catalogue",
