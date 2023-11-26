@@ -7,11 +7,9 @@ let storeModel = mongoose.Schema
     description: String,
     stock: Number,
     price: Number,
-    
 },
 {
     collection: "catalogue",
 }
 );
-
 module.exports = mongoose.model('Store', storeModel);
