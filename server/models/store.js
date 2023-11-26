@@ -7,6 +7,7 @@ let storeModel = mongoose.Schema
     description: String,
     stock: Number,
     price: Number,
+    
 },
 {
     collection: "catalogue",
