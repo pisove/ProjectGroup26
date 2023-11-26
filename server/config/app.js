@@ -18,7 +18,7 @@ mongoDB.once('open', ()=>{
 });
 
 let indexRouter = require('../routes/index');
-let storeRouter = require('../routes/store');
+let incidentRouter = require('../routes/incident');
 
 let app = express();
 
@@ -34,7 +34,7 @@ app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 app.use('/', indexRouter); //localhost:3000
-app.use('/store-catalogue', storeRouter);//localhost:3000/store-catalogue
+app.use('/incident-catalogue', incidentRouter);//localhost:3000/incident-catalogue
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
