@@ -13,7 +13,7 @@ module.exports.displayStoreCatalogue = (req, res, next) => {
         else {
             //console.log(storeCatalogue);
             res.render('store/catalogue', {
-                title: 'Store Catalogue',
+                title: 'Incident Management',
                 StoreCatalogue: storeCatalogue
             })
         }
