@@ -1,8 +1,8 @@
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose'); // npm i mongoose
-// connect with store model
-let Store = require('../models/store');
+// connect with report model
+let Store = require('../models/report');
 /* CRUD Operation*/
 
 module.exports.displayStoreCatalogue = (req, res, next) => {
