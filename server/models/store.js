@@ -3,7 +3,7 @@ let mongoose = require('mongoose');
 let storeModel = mongoose.Schema
 ({
     name: String,
-    category: String,
+    catagory: String,
     description: String,
     stock: Number,
     price: Number,
