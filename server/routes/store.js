@@ -2,31 +2,31 @@ let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 
-//connect with store model
+//connect with incident model
 
-let store = require('../models/store');
-let storeController = require('../controller/store');
+let incident = require('../models/incident');
+let incidentController = require('../controller/incident');
 
 /*show catalogue page*/
-router.get('/', storeController.displayStoreCatalogue);
+router.get('/', incidentController.displayIncidentCatalogue);
 
 /*show add item page*/
-router.get('/add', storeController.displayAddPage);
+router.get('/add', incidentController.displayAddPage);
 
 /*add item operation*/
-router.post('/add', storeController.processAddPage);
+router.post('/add', incidentController.processAddPage);
 
 /*show edit item page*/
-router.get('/edit/:id', storeController.displayEditPage);
+router.get('/edit/:id', incidentController.displayEditPage);
 
 /*update item operation*/
-router.post('/edit/:id', storeController.processEditPage);
+router.post('/edit/:id', incidentController.processEditPage);
 
 /*show delete confirmation*/
-router.get('/delete/:id', storeController.displayDeletePage)
+router.get('/delete/:id', incidentController.displayDeletePage)
 
 /*delete item operation*/
-router.post('/delete/:id', storeController.performDelete);
+router.post('/delete/:id', incidentController.performDelete);
 
 module.exports = router;
 
