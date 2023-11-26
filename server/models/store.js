@@ -5,8 +5,8 @@ let storeModel = mongoose.Schema
     name: String,
     catagory: String,
     description: String,
-    stock: Number,
-    price: Number,
+    stock: String,
+    price: String,
 },
 {
     collection: "catalogue",
