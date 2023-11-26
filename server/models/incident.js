@@ -12,4 +12,4 @@ let storeModel = mongoose.Schema
     collection: "catalogue",
 }
 );
-module.exports = mongoose.model('Incident', incidentModel);
+module.exports = mongoose.model('Incident', storeModel);
