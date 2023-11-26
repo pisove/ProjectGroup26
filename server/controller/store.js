@@ -1,44 +1,44 @@
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose'); // npm i mongoose
-// connect with store model
-let Store = require('../models/store');
+// connect with incident model
+let Incident = require('../models/incident');
 /* CRUD Operation*/
 
-module.exports.displayStoreCatalogue = (req, res, next) => {
-    Store.find((err, storeCatalogue) => {
+module.exports.displayIncidentCatalogue = (req, res, next) => {
+    Incident.find((err, incidentCatalogue) => {
         if (err) {
             return console.error(err);
         }
         else {
-            //console.log(storeCatalogue);
-            res.render('store/catalogue', {
+            //console.log(incidentCatalogue);
+            res.render('incident/catalogue', {
                 title: 'Incident Management',
-                StoreCatalogue: storeCatalogue
+                IncidentCatalogue: incidentCatalogue
             })
         }
     });
 }
 
 module.exports.displayAddPage = (req, res, next) => {
-    res.render('store/add', { title: 'Add Item' })
+    res.render('incident/add', { title: 'Add Item' })
 }
 
 module.exports.processAddPage = (req, res, next) => {
-    let newItem = Store({
+    let newItem = Incident({
         "name": req.body.name,
         "catagory": req.body.catagory,
         "description": req.body.description,
         "stock": req.body.stock,
         "price": req.body.price
     });
-    Store.create(newItem, (err, Store) => {
+    Incident.create(newItem, (err, Incident) => {
         if (err) {
             console.log(err);
             res.end(err);
         }
         else {
-            res.redirect('/store-catalogue');
+            res.redirect('/incident-catalogue');
         }
     })
 
@@ -46,20 +46,20 @@ module.exports.processAddPage = (req, res, next) => {
 
 module.exports.displayEditPage = (req, res, next) => {
     let id = req.params.id;
-    Store.findById(id, (err, itemToEdit) => {
+    Incident.findById(id, (err, itemToEdit) => {
         if (err) {
             console.log(err);
             res.end(err);
         }
         else {
-            res.render('store/edit', { title: 'Edit Item', item: itemToEdit });
+            res.render('incident/edit', { title: 'Edit Item', item: itemToEdit });
         }
     });
 }
 
 module.exports.processEditPage = (req, res, next) => {
     let id = req.params.id;
-    let updateItem = Store({
+    let updateItem = Incident({
         "_id": id,
         "name": req.body.name,
         "catagory": req.body.catagory,
@@ -67,39 +67,39 @@ module.exports.processEditPage = (req, res, next) => {
         "stock": req.body.stock,
         "price": req.body.price
     });
-    Store.updateOne({ _id: id }, updateItem, (err) => {
+    Incident.updateOne({ _id: id }, updateItem, (err) => {
         if (err) {
             console.log(err);
             res.end(err);
         }
         else {
-            res.redirect('/store-catalogue');
+            res.redirect('/incident-catalogue');
         }
     });
 }
 
 module.exports.displayDeletePage = (req, res, next) => {
     let id = req.params.id;
-    Store.findById(id, (err, itemToEdit) => {
+    Incident.findById(id, (err, itemToEdit) => {
         if (err) {
             console.log(err);
             res.end(err);
         }
         else {
-            res.render('store/delete', { title: 'Delete Item', item: itemToEdit });
+            res.render('incident/delete', { title: 'Delete Item', item: itemToEdit });
         }
     });
 }
 
 module.exports.performDelete = (req, res, next) => {
     let id = req.params.id;
-    Store.deleteOne({ _id: id }, (err) => {
+    Incident.deleteOne({ _id: id }, (err) => {
         if (err) {
             console.log(err);
             res.end(err);
         }
         else {
-            res.redirect('/store-catalogue');
+            res.redirect('/incident-catalogue');
         }
     });
 }
