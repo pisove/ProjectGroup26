@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+
+.jumbotron{
+    
+    display:flex;
+    flex-direction: row;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    padding-top:5%;
+   
+    width:100%;
+}
+
+.container-1{
+    height:100%;
+    width:50vh;
+    position:relative
+}
+.container-2{
+    height:100%;
+    width:50vh;
+    position:relative
+}
+.container-1 img{
+    width:90%;
+    border-radius:3vh;
+    
+}
+.display-7{
+    font-weight: bold;
+}
