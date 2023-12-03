@@ -5,7 +5,7 @@
     <div class="row">
     <div class="col-md-offset-3 col-md-10">
     <h1>Incident Management</h1>
-    <a href="/incident-catalogue/add" class="btn btn-primary" role="button">
+    <a href="/resolvehub/add" class="btn btn-primary" role="button">
         <i class="fas fa-plus-circle"></i> Add an Incident </a>
         <br>
     <br>
@@ -13,7 +13,7 @@
     <thead class="thead-dark">
     <tr class="d-flex">
     <th class ="text-centre col-2">Issue</th>
-    <th class ="text-centre col-2">Status</th>
+    <th class ="text-centre col-2">Status</th>s
     <th class ="text-centre col-4">Description</th>
     <th class ="text-centre col-1">Date</th>
     <th class ="text-centre col-1">Time</th>
@@ -22,20 +22,20 @@
     </tr>
     </thead>
     <tbody>
-    <% for(let count= 0; count<IncidentCatalogue.length; count ++) {%>
+    <% for(let count= 0; count<resolvehub.length; count ++) {%>
         <tr class="d-flex">
-        <td class="text-centre col-2"><%= IncidentCatalogue[count].name %></td>
-        <td class="text-centre col-2"><%= IncidentCatalogue[count].catagory %></td>
-        <td class="text-centre col-4"><%= IncidentCatalogue[count].description %></td>
-        <td class="text-centre col-1"><%= IncidentCatalogue[count].stock %></td>
-        <td class="text-centre col-1"><%= IncidentCatalogue[count].price %></td>
+        <td class="text-centre col-2"><%= resolvehub[count].name %></td>
+        <td class="text-centre col-2"><%= resolvehub[count].catagory %></td>
+        <td class="text-centre col-4"><%= resolvehub[count].description %></td>
+        <td class="text-centre col-1"><%= resolvehub[count].stock %></td>
+        <td class="text-centre col-1"><%= resolvehub[count].price %></td>
         <td class="text-centre col-1">
-            <a href="/incident-catalogue/edit/<%= IncidentCatalogue[count]._id %>"
+            <a href="/resolvehub/edit/<%= resolvehub[count]._id %>"
             class="btn btn-primary">
             <i class="fas fa-pencil"></i> </a>
             </td>
         <td class="text-centre col-1">
-            <a href="/incident-catalogue/delete/<%= IncidentCatalogue[count]._id %>"
+            <a href="/resolvehub/delete/<%= resolvehub[count]._id %>"
             class="btn btn-danger">
             <i class="fas fa-xmark"></i> </a>
             </td>

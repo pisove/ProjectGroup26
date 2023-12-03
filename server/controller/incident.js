@@ -1,6 +1,7 @@
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose'); // npm i mongoose
+let jwt = require('jsonwebtoken');
 // connect with incident model
 let Incident = require('../models/incident');
 /* CRUD Operation*/
@@ -11,8 +12,8 @@ module.exports.displayIncidentCatalogue = (req, res, next) => {
             return console.error(err);
         }
         else {
-            //console.log(incidentCatalogue);
-            res.render('incident/catalogue', {
+            //console.log(resolvehub);
+            res.render('incident/entries', {
                 title: 'Incident Management',
                 IncidentCatalogue: incidentCatalogue
             })
@@ -38,7 +39,7 @@ module.exports.processAddPage = (req, res, next) => {
             res.end(err);
         }
         else {
-            res.redirect('/incident-catalogue');
+            res.redirect('/incident');
         }
     })
 
@@ -73,7 +74,7 @@ module.exports.processEditPage = (req, res, next) => {
             res.end(err);
         }
         else {
-            res.redirect('/incident-catalogue');
+            res.redirect('/incident');
         }
     });
 }
@@ -99,7 +100,7 @@ module.exports.performDelete = (req, res, next) => {
             res.end(err);
         }
         else {
-            res.redirect('/incident-catalogue');
+            res.redirect('/incident');
         }
     });
 }
