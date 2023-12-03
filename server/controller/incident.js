@@ -30,11 +30,11 @@ module.exports.displayAddPage = (req,res,next)=> {
 
 module.exports.processAddPage = (req,res,next)=> {
     let newIncident = Incident ({
-        "name":req.body.name,
-        "userName":req.body.userName,
+        "issue":req.body.issue,
+        "status":req.body.status,
         "description": req.body.description,
-        "email":req.body.email,
-        "number":req.body.number
+        "date":req.body.date,
+        "time":req.body.time
     });
     Incident.create(newIncident,(err,Incident) => {
         if (err) {
@@ -69,11 +69,11 @@ module.exports.processEditPage = (req, res, next) => {
     let id = req.params.id;
     let updateIncident = Incident({
         "_id": id,
-        "name": req.body.name,
-        "userName": req.body.userName,
+        "issue": req.body.issue,
+        "status": req.body.status,
         "description": req.body.description,
-        "email": req.body.email,
-        "number": req.body.number
+        "date": req.body.date,
+        "time": req.body.time
     });
     Incident.updateOne({_id: id},updateIncident, (err) =>{
         if (err) {

@@ -1,54 +1,64 @@
 <%- include ('../partials/header.ejs') %>
 <%- include ('../partials/main_nav.ejs') %>
-<link rel='stylesheet' href='/Content/sign-up.css' />
-<main class="container">
-    <!--Message Area-->
-    <% if (message.lenth > 0) { %>
-    <div class="alert alter-danger">
-        <%= message %>
-    </div>
-    <% } %>
 
+<!-- Content for add page-->
+<div class="container">
     <div class="row">
-        <div class="offset-md-4 col-md-4">
-            <h1>Sign Up</h1>
-            <form method="post" autocomplete="off">
-                <fieldset class="form-group">
-                    <label for="username"></label>
-                    <input type="text" class="form-control"
-                    name="username" 
-                    placeholder="Enter username"
-                    id="username" required autofocus>
-                </fieldset>
-                <fieldset class="form-group">
-                    <label for="password"></label>
-                    <input type="password" class="form-control"
-                    name="password" 
-                    placeholder="Enter password"
-                    id="password" required>
-                </fieldset>
-                <fieldset class="form-group">
-                    <label for="email"></label>
-                    <input type="email" class="form-control"
-                    name="email" 
-                    placeholder="Enter Email Address"
-                    id="email" required>
-                </fieldset>
-                <fieldset class="form-group">
-                    <label for="displayName"></label>
-                    <input type="text" class="form-control"
-                    name="displayName" 
-                    placeholder="Enter display name"
-                    id="displayName" required>
-                </fieldset><br>
-                <fieldset class="form-group text-right">
-                    <input type="submit" class="btn btn-success" value="Register">
-                    <a class="btn btn-warning" href="/">Cancel
-                    </a>
-                </fieldset>
-            </form>
-        </div>
+    <div class="col-md-10 centered">
+    <h1>Add New Incident</h1>
+    <form class="form" method="post"><br>
+    
+    <div class="form-group">
+        <label for="nameTextField">Issue</label>
+        <input type="text" class="form-control" id="nameTextField"
+        placeholder="Enter the main topic your issue"
+        name="name" required>
+    </div><br>
+
+    <div class="form-group">
+        <label for="catagoryTextField">Status</label>
+        <input type="text" class="form-control" id="catagoryTextField"
+        placeholder="Enter the issue's status"
+        name="catagory" required>
+    </div><br>
+
+    <div class="form-group">
+        <label for="descriptionTextField">Description</label>
+        <textarea type="text" class="form-control" id="descriptionTextField"
+        placeholder="Please provide more detail of your issue"
+        name="description" required></textarea>
+    </div><br>
+
+    <div class="form-group">
+        <label for="stockpileTextField">Date</label>
+        <input type="date" class="form-control" id="stockpileTextField"
+        placeholder="Enter the current date upon your submission"
+        name="stock" required>
+    </div><br>
+
+    <div class="form-group">
+        <label for="priceTextField">Time</label>
+        <input type="time" class="form-control" id="priceTextField"
+        placeholder="Please provide a specific time of your ticket"
+        name="price" required>
     </div>
-</main>
+
+    <br>
+    <button class="btn btn-primary" type="submit">
+    <i class="fas fa-edit"></i> Create
+    </button>
+
+    <a href="/incident/add" class="btn btn-warning">
+    <i class="fas fa-undo"></i> Reset</a>
+
+    <a href="/incident" class="btn btn-danger">
+    <i class="fas fa-xmark"></i> Cancel</a>
+        
+
+    </form>
+    </div>
+    </div>
+</div>
+    
 <%- include ('../partials/bottom_nav.ejs') %>
 <%- include ('../partials/footer.ejs')%>

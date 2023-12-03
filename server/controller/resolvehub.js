@@ -13,7 +13,7 @@ module.exports.displayResolveHub = (req, res, next) => {
         else {
             //console.log(resolvehub);
             res.render('resolvehub/entries', {
-                title: 'Lazy Social',
+                title: 'ResolveHub',
                 ResolveHub: resolvehub
             })
         }
@@ -25,14 +25,14 @@ module.exports.displayAddPage = (req, res, next) => {
 }
 
 module.exports.processAddPage = (req, res, next) => {
-    let newItem = lazySocial({
-        "name": req.body.name,
-        "catagory": req.body.catagory,
+    let newItem = ResolveHub({
+        "issue": req.body.issue,
+        "status": req.body.status,
         "description": req.body.description,
-        "stock": req.body.stock,
-        "price": req.body.price
+        "date": req.body.date,
+        "time": req.body.time
     });
-    lazySocial.create(newItem, (err, lazySocial) => {
+    ResolveHub.create(newItem, (err, lazySocial) => {
         if (err) {
             console.log(err);
             res.end(err);
@@ -46,7 +46,7 @@ module.exports.processAddPage = (req, res, next) => {
 
 module.exports.displayEditPage = (req, res, next) => {
     let id = req.params.id;
-    lazySocial.findById(id, (err, itemToEdit) => {
+    ResolveHub.findById(id, (err, itemToEdit) => {
         if (err) {
             console.log(err);
             res.end(err);
@@ -59,15 +59,15 @@ module.exports.displayEditPage = (req, res, next) => {
 
 module.exports.processEditPage = (req, res, next) => {
     let id = req.params.id;
-    let updateItem = lazySocial({
+    let updateItem = ResolveHub({
         "_id": id,
-        "name": req.body.name,
-        "catagory": req.body.catagory,
+        "issue": req.body.issue,
+        "status": req.body.stutas,
         "description": req.body.description,
-        "stock": req.body.stock,
-        "price": req.body.price
+        "date": req.body.date,
+        "time": req.body.time
     });
-    lazySocial.updateOne({ _id: id }, updateItem, (err) => {
+    ResolveHub.updateOne({ _id: id }, updateItem, (err) => {
         if (err) {
             console.log(err);
             res.end(err);
@@ -80,7 +80,7 @@ module.exports.processEditPage = (req, res, next) => {
 
 module.exports.displayDeletePage = (req, res, next) => {
     let id = req.params.id;
-    lazySocial.findById(id, (err, itemToEdit) => {
+    ResolveHub.findById(id, (err, itemToEdit) => {
         if (err) {
             console.log(err);
             res.end(err);
@@ -93,7 +93,7 @@ module.exports.displayDeletePage = (req, res, next) => {
 
 module.exports.performDelete = (req, res, next) => {
     let id = req.params.id;
-    lazySocial.deleteOne({ _id: id }, (err) => {
+    ResolveHub.deleteOne({ _id: id }, (err) => {
         if (err) {
             console.log(err);
             res.end(err);
