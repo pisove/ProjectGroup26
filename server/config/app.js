@@ -59,7 +59,7 @@ app.use(flash());
 
 
 let indexRouter = require('../routes/index');
-let resolvehubRouter = require('../routes/resolvehub');
+let incidentsRouter = require('../routes/incidents');
 
 
 // view engine setup
@@ -74,7 +74,7 @@ app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 app.use('/', indexRouter); // localhost:3000
-app.use('/incident-list', resolvehubRouter); // localhost:3000/incident-list
+app.use('/incident-list', incidentsRouter); // localhost:3000/friend-list
 
 // catch 404 and forward to error 
 app.use(function(req, res, next) {

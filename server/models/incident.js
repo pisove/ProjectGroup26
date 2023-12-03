@@ -1,6 +1,6 @@
 let mongoose = require('mongoose');
 //create store model
-let storeModel = mongoose.Schema
+let incidentModel = mongoose.Schema
 ({
     name: String,
     catagory: String,

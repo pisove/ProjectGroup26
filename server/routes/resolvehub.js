@@ -1,39 +1,32 @@
 let express = require('express');
 let router = express.Router();
-let mongoose = require('mongoose'); // npm i mongoose
-let jwt = require('jsonwebtoken');
+let mongoose = require('mongoose');
 
+//connect with resolve model
 
-let ResolveHub = require('../models/authentaction');
+let resolvehub = require('../models/resolvehub');
 let resolvehubController = require('../controller/resolvehub');
-/* CRUD Operation*/
 
-function requireAuth(req,res,next)
-{
-    if(!req.isAuthenticated())
-    {
-        return res.redirect('/login');
-    }
-    next();
-}
+/*show resolvehub page*/
+router.get('/', resolvehubController.displayLazysocial);
 
+/*show add item page*/
+router.get('/add', resolvehubController.displayAddPage);
 
+/*add item operation*/
+router.post('/add', resolvehubController.processAddPage);
 
-router.get('/',resolvehubController.displayIncidentList);
+/*show edit item page*/
+router.get('/edit/:id', resolvehubController.displayEditPage);
 
-/* Add Operation */
-/* Get route for displaying the Add-Page -- Create Operation */
-router.get('/add',requireAuth, resolvehubController.displayAddPage);
-/* Post route for processing the Add-Page -- Create Operation */
-router.post('/add',requireAuth, resolvehubController.processAddPage);
-/* Edit Operation */
-/* Get route for displaying the Edit Operation -- Update Operation */
-router.get('/edit/:id',requireAuth,resolvehubController.displayEditPage);
-/* Post route for displaying the Edit Operation -- Update Operation */
-router.post('/edit/:id',requireAuth, resolvehubController.processEditPage);
-/* Delete Operation */
-/* Get to perform Delete Operation -- Deletion */
-router.get('/delete/:id',requireAuth,resolvehubController.performDelete);
+/*update item operation*/
+router.post('/edit/:id', resolvehubController.processEditPage);
 
+/*show delete confirmation*/
+router.get('/delete/:id', resolvehubController.displayDeletePage)
 
-module.exports=router;
+/*delete item operation*/
+router.post('/delete/:id', resolvehubController.performDelete);
+
+module.exports = router;
+
