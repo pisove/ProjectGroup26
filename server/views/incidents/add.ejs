@@ -4,55 +4,55 @@
 <!-- Content for add page-->
 <div class="container">
     <div class="row">
-    <div class="col-md-10 centered">
-    <h1>Add New Incident</h1>
-    <form class="form" method="post"><br>
+        <div class="col-md-10 centered">
+        <h1>Add New Incident</h1>
+        <form class="form" method="post"><br>
+        
+        <div class="form-group">
+            <label for="issueTextField">Issue</label>
+            <input type="text" class="form-control" id="issueTextField"
+            placeholder="Enter the main topic your issue"
+            name="issue" required>
+        </div><br>
     
-    <div class="form-group">
-        <label for="nameTextField">Issue</label>
-        <input type="text" class="form-control" id="nameTextField"
-        placeholder="Enter the main topic your issue"
-        name="name" required>
-    </div><br>
-
-    <div class="form-group">
-        <label for="catagoryTextField">Status</label>
-        <input type="text" class="form-control" id="catagoryTextField"
-        placeholder="Enter the issue's status"
-        name="catagory" required>
-    </div><br>
-
-    <div class="form-group">
-        <label for="descriptionTextField">Description</label>
-        <textarea type="text" class="form-control" id="descriptionTextField"
-        placeholder="Please provide more detail of your issue"
-        name="description" required></textarea>
-    </div><br>
-
-    <div class="form-group">
-        <label for="stockpileTextField">Date</label>
-        <input type="date" class="form-control" id="stockpileTextField"
-        placeholder="Enter the current date upon your submission"
-        name="stock" required>
-    </div><br>
-
-    <div class="form-group">
-        <label for="priceTextField">Time</label>
-        <input type="time" class="form-control" id="priceTextField"
-        placeholder="Please provide a specific time of your ticket"
-        name="price" required>
-    </div>
-
-    <br>
-    <button class="btn btn-primary" type="submit">
-    <i class="fas fa-edit"></i> Create
-    </button>
-
-    <a href="/incident/add" class="btn btn-warning">
-    <i class="fas fa-undo"></i> Reset</a>
-
-    <a href="/incident" class="btn btn-danger">
-    <i class="fas fa-xmark"></i> Cancel</a>
+        <div class="form-group">
+            <label for="statusTextField">Status</label>
+            <input type="text" class="form-control" id="statusTextField"
+            placeholder="Enter the issue's status"
+            name="status" required>
+        </div><br>
+    
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea type="text" class="form-control" id="description"
+            placeholder="Please provide more detail of your issue"
+            name="description" required></textarea>
+        </div><br>
+    
+        <div class="form-group">
+            <label for="dateTextField">Date</label>
+            <input type="date" class="form-control" id="dateTextField"
+            placeholder="Enter the current date upon your submission"
+            name="date" required>
+        </div><br>
+    
+        <div class="form-group">
+            <label for="time">Time</label>
+            <input type="time" class="form-control" id="time"
+            placeholder="Please provide a specific time of your ticket"
+            name="time" required>
+        </div>
+    
+        <br>
+        <button class="btn btn-primary" type="submit">
+        <i class="fas fa-edit"></i> Create
+        </button>
+    
+        <a href="/incident/add" class="btn btn-warning">
+        <i class="fas fa-undo"></i> Reset</a>
+    
+        <a href="/incident" class="btn btn-danger">
+        <i class="fas fa-xmark"></i> Cancel</a>
         
 
     </form>

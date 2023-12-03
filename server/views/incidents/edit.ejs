@@ -8,22 +8,22 @@
             <form class="form" method="post">
 
                 <div class="form-group">
-                    <label for="nameTextField">Issue</label>
+                    <label for="issueTextField">Issue</label>
                     <input type="text" class="form-control"
-                    id="nameTextField"
+                    id="issueTextField"
                     placeholder="Enter a title for the incident"
-                    name="name" 
-                    value="<%= item.name%>"
+                    name="issue" 
+                    value="<%= incident.issue%>"
                     required>
                 </div><br>
             
                 <div class="form-group">
-                    <label for="catagoryTextField">Status</label>
+                    <label for="statusTextField">Status</label>
                     <input type="text" class="form-control"
-                    id="catagoryTextField"
+                    id="statusTextField"
                     placeholder="Enter the current status of the incident"
-                    name="catagory" 
-                    value="<%= item.catagory%>"
+                    name="status" 
+                    value="<%= incident.status%>"
                     required>
                 </div><br>
             
@@ -32,26 +32,26 @@
                     <textarea type="text" class="form-control"
                     id="descriptionTextField"
                     placeholder="Enter a brief description of the incident"
-                    name="description" required><%= item.description%></textarea>
+                    name="description" required><%= incident.description%></textarea>
                 </div><br>
             
                 <div class="form-group">
-                    <label for="stockpileTextField">Date</label>
+                    <label for="dateTextField">Date</label>
                     <input type="date" class="form-control"
-                    id="stockpileTextField"
-                    placeholder="Enter the number of items in stock"
-                    name="stock" 
-                    value="<%= item.stock %>"
+                    id="dateTextField"
+                    placeholder="Enter the date of the incident"
+                    name="date" 
+                    value="<%= incident.date %>"
                     required>
                 </div><br>
             
                 <div class="form-group">
-                    <label for="priceTextField">Time</label>
+                    <label for="timeTextField">Time</label>
                     <input type="time" class="form-control"
                     id="priceTextField"
                     placeholder="Enter the time of the incident"
-                    name="price" 
-                    value="<%= item.price%>"
+                    name="time" 
+                    value="<%= incident.time%>"
                     required>
                 </div> 
               <br>
