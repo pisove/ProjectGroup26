@@ -2,11 +2,11 @@ let mongoose = require('mongoose');
 //create resolvehub model
 let resolvehubModel = mongoose.Schema
 ({
-    name: String,
-    catagory: String,
+    issue: String,
+    status: String,
     description: String,
-    stock: Number,
-    price: Number,
+    date: String,
+    time: String,
 },
 {
     collection: "entries",

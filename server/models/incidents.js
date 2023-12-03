@@ -1,11 +1,11 @@
 let mongoose = require('mongoose');
 
 let incidentsModel = mongoose.Schema({
-    name: String,
-    userName: String,
+    issue: String,
+    status: String,
     description: String,
-    email: String,
-    number: Number
+    date: String,
+    time: String
     },
     {
         collection: "incidents"
