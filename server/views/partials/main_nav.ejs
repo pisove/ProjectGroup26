@@ -14,8 +14,21 @@
         <% } else { %>
           <a class="nav-link" href="/incident-catalogue">
         <% } %>
-          <i class="fa-solid fa-incident"></i> Incident Report </a>
+          <img src="/Content/user.svg"></img> Incident Report </a>
         </li>
+
+        <% if(typeof displayName =='string' && displayName) { %>
+          <li class="navbar-text">
+            <img src="/Content/admin.svg"/>
+          Welcome, <%= displayName %> </li>
+          <li class="nav-item">
+          <a href="/logout" class="nav-link">
+            <img src="/Content/log-out.svg"/>Logout</a></li>
+        <% } else { %>
+          <li class="nav-item">
+            <a href="/login" class="nav-link">
+              <img src="/Content/log-out.svg"/></i>Login</a></li>
+        <% } %>
 
     </div>
   </div>
