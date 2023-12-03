@@ -8,7 +8,7 @@ let incident = require('../models/incident');
 let incidentController = require('../controller/incident');
 
 /*show catalogue page*/
-router.get('/', incidentController.displayIncidentCatalogue);
+router.get('/', incidentController.displayIncident);
 
 /*show add item page*/
 router.get('/add', incidentController.displayAddPage);

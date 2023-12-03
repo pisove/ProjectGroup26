@@ -5,7 +5,7 @@ let jwt = require('jsonwebtoken');
 
 
 let ResolveHub = require('../models/authentaction');
-let resolvehubController = require('../controller/ResolveHub');
+let resolvehubController = require('../controller/resolvehub');
 /* CRUD Operation*/
 
 function requireAuth(req,res,next)

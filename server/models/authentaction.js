@@ -9,7 +9,7 @@ let authentactionModel = mongoose.Schema
     price: Number,
 },
 {
-    collection: "entries",
+    collection: "authentaction",
 }
 );
 

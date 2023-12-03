@@ -74,7 +74,7 @@ app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 app.use('/', indexRouter); // localhost:3000
-app.use('/incident-list', resolvehubRouter); // localhost:3000/friend-list
+app.use('/incident-list', resolvehubRouter); // localhost:3000/incident-list
 
 // catch 404 and forward to error 
 app.use(function(req, res, next) {

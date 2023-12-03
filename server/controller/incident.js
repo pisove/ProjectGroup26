@@ -6,8 +6,8 @@ let jwt = require('jsonwebtoken');
 let Incident = require('../models/incident');
 /* CRUD Operation*/
 
-module.exports.displayIncidentCatalogue = (req, res, next) => {
-    Incident.find((err, incidentCatalogue) => {
+module.exports.displayIncident = (req, res, next) => {
+    Incident.find((err, incident) => {
         if (err) {
             return console.error(err);
         }
@@ -15,25 +15,25 @@ module.exports.displayIncidentCatalogue = (req, res, next) => {
             //console.log(resolvehub);
             res.render('incident/entries', {
                 title: 'Incident Management',
-                IncidentCatalogue: incidentCatalogue
+                Incident: incident
             })
         }
     });
 }
 
 module.exports.displayAddPage = (req, res, next) => {
-    res.render('incident/add', { title: 'Add Item' })
+    res.render('incident/add', { title: 'Add Incident' })
 }
 
 module.exports.processAddPage = (req, res, next) => {
     let newItem = Incident({
-        "name": req.body.name,
-        "catagory": req.body.catagory,
+        "issue": req.body.issue,
+        "status": req.body.status,
         "description": req.body.description,
-        "stock": req.body.stock,
-        "price": req.body.price
+        "date": req.body.date,
+        "time": req.body.time
     });
-    Incident.create(newItem, (err, Incident) => {
+    incident.create(newItem, (err, Incident) => {
         if (err) {
             console.log(err);
             res.end(err);
@@ -47,7 +47,7 @@ module.exports.processAddPage = (req, res, next) => {
 
 module.exports.displayEditPage = (req, res, next) => {
     let id = req.params.id;
-    Incident.findById(id, (err, itemToEdit) => {
+    incident.findById(id, (err, itemToEdit) => {
         if (err) {
             console.log(err);
             res.end(err);
@@ -62,13 +62,13 @@ module.exports.processEditPage = (req, res, next) => {
     let id = req.params.id;
     let updateItem = Incident({
         "_id": id,
-        "name": req.body.name,
-        "catagory": req.body.catagory,
+        "issue": req.body.issue,
+        "status": req.body.status,
         "description": req.body.description,
-        "stock": req.body.stock,
-        "price": req.body.price
+        "date": req.body.date,
+        "time": req.body.time
     });
-    Incident.updateOne({ _id: id }, updateItem, (err) => {
+    incident.updateOne({ _id: id }, updateItem, (err) => {
         if (err) {
             console.log(err);
             res.end(err);
@@ -81,20 +81,20 @@ module.exports.processEditPage = (req, res, next) => {
 
 module.exports.displayDeletePage = (req, res, next) => {
     let id = req.params.id;
-    Incident.findById(id, (err, itemToEdit) => {
+    incident.findById(id, (err, itemToEdit) => {
         if (err) {
             console.log(err);
             res.end(err);
         }
         else {
-            res.render('incident/delete', { title: 'Delete Item', item: itemToEdit });
+            res.render('incident/delete', { title: 'Delete Incident', item: itemToEdit });
         }
     });
 }
 
 module.exports.performDelete = (req, res, next) => {
     let id = req.params.id;
-    Incident.deleteOne({ _id: id }, (err) => {
+    incident.deleteOne({ _id: id }, (err) => {
         if (err) {
             console.log(err);
             res.end(err);

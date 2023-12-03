@@ -5,7 +5,7 @@
     <div class="row">
     <div class="col-md-offset-3 col-md-10">
     <h1>Incident Management</h1>
-    <a href="/resolvehub/add" class="btn btn-primary" role="button">
+    <a href="/incident/add" class="btn btn-primary" role="button">
         <i class="fas fa-plus-circle"></i> Add an Incident </a>
         <br>
     <br>
@@ -22,20 +22,20 @@
     </tr>
     </thead>
     <tbody>
-    <% for(let count= 0; count<resolvehub.length; count ++) {%>
+    <% for(let count= 0; count<Incident.length; count ++) {%>
         <tr class="d-flex">
-        <td class="text-centre col-2"><%= resolvehub[count].name %></td>
-        <td class="text-centre col-2"><%= resolvehub[count].catagory %></td>
-        <td class="text-centre col-4"><%= resolvehub[count].description %></td>
-        <td class="text-centre col-1"><%= resolvehub[count].stock %></td>
-        <td class="text-centre col-1"><%= resolvehub[count].price %></td>
+        <td class="text-centre col-2"><%= Incident[count].issue %></td>
+        <td class="text-centre col-2"><%= Incident[count].status %></td>
+        <td class="text-centre col-4"><%= Incident[count].description %></td>
+        <td class="text-centre col-1"><%= Incident[count].date %></td>
+        <td class="text-centre col-1"><%= Incident[count].time %></td>
         <td class="text-centre col-1">
-            <a href="/resolvehub/edit/<%= resolvehub[count]._id %>"
+            <a href="/incident/edit/<%= Incident[count]._id %>"
             class="btn btn-primary">
             <i class="fas fa-pencil"></i> </a>
             </td>
         <td class="text-centre col-1">
-            <a href="/resolvehub/delete/<%= resolvehub[count]._id %>"
+            <a href="/incident/delete/<%= Incident[count]._id %>"
             class="btn btn-danger">
             <i class="fas fa-xmark"></i> </a>
             </td>

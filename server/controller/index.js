@@ -68,7 +68,7 @@ module.exports.processLoginPage = (req, res, next) => {
             });
 
             // TODO - Getting Ready to convert to API
-            return res.redirect('/friend-list')
+            return res.redirect('/incident-list')
         });
     })(req,res,next)
 }
@@ -129,7 +129,7 @@ module.exports.processRegisterPage = (req,res,next) => {
         //    res.json({success:true, msg:'User registered Successfully'});
             // if registration is successful
             return passport.authenticate('local')(req,res,()=>{
-                res.redirect('/friend-list');
+                res.redirect('/incident-list');
             })    
         }
     })
