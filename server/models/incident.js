@@ -9,7 +9,7 @@ let storeModel = mongoose.Schema
     price: String,
 },
 {
-    collection: "catalogue",
+    collection: "entries",
 }
 );
-module.exports = mongoose.model('Incident', storeModel);
+module.exports = mongoose.model('Incident', incidentModel);
