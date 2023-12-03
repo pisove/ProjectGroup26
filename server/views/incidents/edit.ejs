@@ -1,0 +1,72 @@
+<%- include ('../partials/header.ejs') %>
+<%- include ('../partials/main_nav.ejs') %>
+<!-- Content for the Edit page -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+            <h1>Edit a Incident</h1>
+            <form class="form" method="post">
+
+                <div class="form-group">
+                    <label for="issueTextField">Issue</label>
+                    <input type="text" class="form-control"
+                    id="issueTextField"
+                    placeholder="Enter a title for the incident"
+                    name="issue" 
+                    value="<%= incident.issue%>"
+                    required>
+                </div><br>
+            
+                <div class="form-group">
+                    <label for="statusTextField">Status</label>
+                    <input type="text" class="form-control"
+                    id="statusTextField"
+                    placeholder="Enter the current status of the incident"
+                    name="status" 
+                    value="<%= incident.status%>"
+                    required>
+                </div><br>
+            
+                <div class="form-group">
+                    <label for="descriptionTextField">Description</label>
+                    <textarea type="text" class="form-control"
+                    id="descriptionTextField"
+                    placeholder="Enter a brief description of the incident"
+                    name="description" required><%= incident.description%></textarea>
+                </div><br>
+            
+                <div class="form-group">
+                    <label for="dateTextField">Date</label>
+                    <input type="date" class="form-control"
+                    id="dateTextField"
+                    placeholder="Enter the date of the incident"
+                    name="date" 
+                    value="<%= incident.date %>"
+                    required>
+                </div><br>
+            
+                <div class="form-group">
+                    <label for="timeTextField">Time</label>
+                    <input type="time" class="form-control"
+                    id="priceTextField"
+                    placeholder="Enter the time of the incident"
+                    name="time" 
+                    value="<%= incident.time%>"
+                    required>
+                </div> 
+              <br>
+              <button class="btn btn-primary" type="submit">
+                <i class="fas fa-edit"></i> Update</button>
+            
+                <a href="/incident-list/edit/<%= incident._id %>" class="btn btn-warning">
+                <i class="fas fa-undo"></i> Reset</a>
+                
+                <a href="/incident-list" class="btn btn-danger">
+                <i class="fas fa-xmark"></i> Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include ('../partials/bottom_nav.ejs') %>
+<%- include ('../partials/footer.ejs')%>

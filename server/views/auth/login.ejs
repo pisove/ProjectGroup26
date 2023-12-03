@@ -11,45 +11,44 @@
     </div>
     <% } %>
     <div class="container-1"><br>
-        <h5>Welcome to Store Employee Management system</h5>
+        <h5>Welcome to Incident Report Management system</h5>
     </div>
     <div class="container-2">
-        <div class="row">
-            
             <div class="offset-md-4 col-md-4">
                 <h1>Login</h1>
                 <form method="post" autocomplete="off">
-                    <fieldset class="form-group">
-                        <label for="username"></label>
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label for="username">Username</label>
                         <input type="text" class="form-control"
                         name="username" 
                         placeholder="Enter username"
                         id="username" required autofocus>
-                    </fieldset>
-                    <fieldset class="form-group">
-                        <label for="password"></label>
+                      </div>
+                      <br>
+                      <div class="form-group">
+                        <label for="password">Password</label>
                         <input type="password" class="form-control"
                         name="password" 
                         placeholder="Enter password"
                         id="password" required>
-                    </fieldset>
-                        or
-                        </div>
+                      </div>
+                      <br>
+                          or
                         <div class="seperate1">
-                        <a href="/register">Create a New Account</a>
+                        <a href="/register">Create Account</a>
                         </div>
                     </fieldset>
                     <fieldset class="form-group text-right">
                         <input type="submit" class="btn btn-primary"
                         value="Login">
-                        <a href="/"></a>
-                            <input type="button" class="btn btn-warning" value="Cancel">
+                        <a class="btn btn-warning" href="/">Cancel
                         </a>
                     </fieldset>
+                    </div>
                 </form>
-            </div>
+                </div>
         
-        </div>
     </div>
 </main>
 <%- include ('../partials/bottom_nav.ejs') %>
