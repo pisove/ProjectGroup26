@@ -17,32 +17,38 @@
             <div class="offset-md-4 col-md-4">
                 <h1>Login</h1>
                 <form method="post" autocomplete="off">
-                    <div class="form-row">
-                      <div class="form-group">
-                        <label for="username">Username</label>
+                    <fieldset class="form-group">
+                        <label for="username"></label>
                         <input type="text" class="form-control"
                         name="username" 
                         placeholder="Enter username"
                         id="username" required autofocus>
-                      </div>
-                      <br>
-                      <div class="form-group">
-                        <label for="password">Password</label>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label for="password"></label>
                         <input type="password" class="form-control"
                         name="password" 
                         placeholder="Enter password"
                         id="password" required>
-                      </div>
-                      <br>
-                          or
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label for="token"></label>
+                        <input type="password" class="form-control"
+                        name="token" 
+                        placeholder="Enter OTP"
+                        id="token">
+                        <div class="seperate">
+                        or
+                        </div>
                         <div class="seperate1">
-                        <a href="/register">Create Account</a>
+                        <a href="/register">Create a New Account</a>
                         </div>
                     </fieldset>
                     <fieldset class="form-group text-right">
                         <input type="submit" class="btn btn-primary"
                         value="Login">
-                        <a class="btn btn-warning" href="/">Cancel
+                        <a href="/"></a>
+                            <input type="button" class="btn btn-warning" value="Cancel">
                         </a>
                     </fieldset>
                     </div>
