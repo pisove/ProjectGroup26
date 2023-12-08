@@ -1,8 +1,10 @@
 # ProjectGroup26
 This repository is for the Final Project of Web &amp; Script Programming Course
-This is the Part 2 of the project
+This is the Part 3 of the project
 
-### Part 2 
-Auth mothed for login and register added
+### Part 3
+OTP Authentication Implementation: DONE
+Cloud Deployment: DONE
+Serverless Database: DONE
 
-Website Version: 2.0
+Website Version: 3.0
